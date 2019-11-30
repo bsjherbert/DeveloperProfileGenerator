@@ -1,17 +1,10 @@
 const inquirer = require("inquirer");
 const axios = require("axios");
-
-
- 
-
-var fs = require('fs')
-var createHTML = require('create-html')
- 
-
+const fs = require('fs');
+const createHTML = require('create-html');
 
 const client_id = "51a029b972e0b63da4fb";
 const client_secret = "92ded2dee8393d85d3ccad77425cafc03006ef84";
-
 
 inquirer.prompt([
     {
@@ -43,14 +36,12 @@ inquirer.prompt([
             var html = createHTML({
                 title: 'example',
                 body: ` <h2 style="color:${answers.preferredColor};">${name}</h2> <img src= "${profileImage}"> <p>Repo Url: <a href="${githubProfile}">${answers.username}: </a></p> <p>Location: ${location}</> <p>User Bio: ${userBio}</p> <p>Public Repos: ${publicRepo}</p> <p>Follower: ${followers}</p> <p>Following: ${following}</p>`
-                
-                
-              })
-               
-              fs.writeFile('index.html', html, function (err) {
+            });
+
+            fs.writeFile('index.html', html, function (err) {
                 if (err) console.log(err)
-              })
-              
+            });
+
         });
 });
 

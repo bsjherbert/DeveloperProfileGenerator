@@ -5,13 +5,15 @@ Node.JS HomeWork Assignment (Developer Profile Generator)
 1. Open up the terminal
 2. Navigate into the correct folder
 3. Type (node index.js) and press enter
-4. Answer prompt number one with your github username
-5. Answer prompt number two with your favorite color
+4. Inquirer will prompt a question asking for github username
+5. Inquirer will prompt a question asking for favorite color
+6. Information on selected user will populate in the terminal.
+7. Open index.html to see profile image and selected categories
 
 # Built With
 JavaScript
 Node.js
-Inquirer (Npm)
+NPM (Inquirer, Axios, FS and Create-HTML)
 
 # Authors
 Brad Herbert - main author
