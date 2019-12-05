@@ -33,12 +33,10 @@ inquirer.prompt([
             let following = response.data.following;
 
             console.log(name, profileImage, githubProfile, location, userBio, publicRepo, followers, following);
-            var html = createHTML({
-                title: 'example',
-                body: ` <h2 style="color:${answers.preferredColor};">${name}</h2> <img src= "${profileImage}"> <p>Repo Url: <a href="${githubProfile}">${answers.username}: </a></p> <p>Location: ${location}</> <p>User Bio: ${userBio}</p> <p>Public Repos: ${publicRepo}</p> <p>Follower: ${followers}</p> <p>Following: ${following}</p>`
-            });
 
-            fs.writeFile('index.html', html, function (err) {
+            var markdown = `# ${name}\n ![alt text](${profileImage})\n [title](${githubProfile})\n ### ${location}\n ### ${userBio}\n ### ${publicRepo}\n ### ${followers}\n ### ${following}`
+
+            fs.writeFile('profile.md', markdown, function (err) {
                 if (err) console.log(err)
             });
 
