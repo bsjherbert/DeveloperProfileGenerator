@@ -34,7 +34,7 @@ inquirer.prompt([
 
             console.log(name, profileImage, githubProfile, location, userBio, publicRepo, followers, following);
 
-            var markdown = `# ${name}\n ![alt text](${profileImage})\n [title](${githubProfile})\n ### ${location}\n ### ${userBio}\n ### ${publicRepo}\n ### ${followers}\n ### ${following}`
+            var markdown = `# ${name}\n ![alt text](${profileImage})\n [title](${githubProfile})\n ### Location: ${location}\n ### Bio: ${userBio}\n ### repositories: ${publicRepo}\n ### followers: ${followers}\n ### following:  ${following}`
 
             fs.writeFile('profile.md', markdown, function (err) {
                 if (err) console.log(err)
